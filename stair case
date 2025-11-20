@@ -1,0 +1,16 @@
+def climb_stairs(n):
+    #base cases
+    if n==1:
+        return 1
+    elif n==2:
+        return 2
+    #initialize first two steps 
+    a,b=1,2 # way(1) and way(2)
+    #loop from step 1 to n
+    for i in range(3,n+1):
+        c=a+b # current way=previous two steps 
+        a,b=b,c # move to next step 
+    return b#b now holds the total ways for n steps
+    #input
+n=int(input("enter the step:"))
+print("number of distinct way to climb to the top:",climb_stairs(n))
